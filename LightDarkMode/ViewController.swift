@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,9 +22,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var regularImage3: UIImageView!
     @IBOutlet weak var regularImage4: UIImageView!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        overrideUserInterfaceStyle = .light
 
         setupView()
     }
