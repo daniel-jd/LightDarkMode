@@ -9,10 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let myFontRegular = UIFont(name: "SourceSansPro-Regular", size: 17)
-    private let myFontTitle = UIFont(name: "SourceSansPro-SemiBold", size: 26)
-    private let myFontHeader = UIFont(name: "SourceSansPro-Bold", size: 36)
-
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var regularLabel1: UILabel!
@@ -46,15 +42,17 @@ class ViewController: UIViewController {
     }
 
     private func setCustomFonts() {
-        headerLabel.font = myFontHeader
-        titleLabel.font = myFontTitle
-        regularLabel1.font = myFontRegular
-        regularLabel2.font = myFontRegular
-        regularLabel3.font = myFontRegular
-        regularLabel4.font = myFontRegular
+        headerLabel.font = .header
+        titleLabel.font = .title
+        regularLabel1.font = .regular
+        regularLabel2.font = .regular
+        regularLabel3.font = .regular
+        regularLabel4.font = .regular
     }
 
 }
+
+// MARK: Extension UIFont
 
 extension UIFont {
     static func sansProRegular(_ size: CGFloat) -> UIFont {
@@ -68,4 +66,15 @@ extension UIFont {
     static func sansProBold(_ size: CGFloat) -> UIFont {
         return UIFont(name: "SourceSansPro-Bold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
+
+    static var header: UIFont {
+        UIFont(name: "SourceSansPro-Bold", size: 36)!
+    }
+    static var title: UIFont {
+        UIFont(name: "SourceSansPro-SemiBold", size: 26)!
+    }
+    static var regular: UIFont {
+        UIFont(name: "SourceSansPro-Regular", size: 17)!
+    }
+
 }
