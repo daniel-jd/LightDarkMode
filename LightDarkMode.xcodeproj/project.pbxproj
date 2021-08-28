@@ -26,7 +26,12 @@
 		A57B883626D7C5F200DE5411 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A57B882A26D7C5F200DE5411 /* SourceSansPro-ExtraLightItalic.ttf */; };
 		A57B883726D7C5F200DE5411 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A57B882B26D7C5F200DE5411 /* SourceSansPro-Italic.ttf */; };
 		A57B883A26D81F4E00DE5411 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B883926D81F4E00DE5411 /* ThemeManager.swift */; };
-		A57B883D26D822D600DE5411 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B883C26D822D600DE5411 /* BaseViewController.swift */; };
+		A592EDEB26DAB1C0006C3430 /* ThemeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592EDEA26DAB1C0006C3430 /* ThemeSelectViewController.swift */; };
+		A592EDF126DABBA6006C3430 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592EDF026DABBA6006C3430 /* Theme.swift */; };
+		A592EDF626DABD1D006C3430 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592EDF526DABD1D006C3430 /* LightTheme.swift */; };
+		A592EDF926DABD2B006C3430 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592EDF826DABD2B006C3430 /* DarkTheme.swift */; };
+		A592EDFC26DABD37006C3430 /* RedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592EDFB26DABD37006C3430 /* RedTheme.swift */; };
+		A592EE0326DAD17C006C3430 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592EE0226DAD17C006C3430 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +56,12 @@
 		A57B882A26D7C5F200DE5411 /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		A57B882B26D7C5F200DE5411 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		A57B883926D81F4E00DE5411 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		A57B883C26D822D600DE5411 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A592EDEA26DAB1C0006C3430 /* ThemeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectViewController.swift; sourceTree = "<group>"; };
+		A592EDF026DABBA6006C3430 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A592EDF526DABD1D006C3430 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
+		A592EDF826DABD2B006C3430 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		A592EDFB26DABD37006C3430 /* RedTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedTheme.swift; sourceTree = "<group>"; };
+		A592EE0226DAD17C006C3430 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,15 +95,17 @@
 		A57516E126AAD88700185611 /* LightDarkMode */ = {
 			isa = PBXGroup;
 			children = (
+				A592EE0226DAD17C006C3430 /* BaseViewController.swift */,
+				A57516E626AAD88700185611 /* ViewController.swift */,
+				A592EDEA26DAB1C0006C3430 /* ThemeSelectViewController.swift */,
+				A57516E826AAD88700185611 /* Main.storyboard */,
+				A592EDFE26DABDF0006C3430 /* Utilities */,
+				A592EDF326DABD0B006C3430 /* Themes */,
 				A57516E226AAD88700185611 /* AppDelegate.swift */,
 				A57516E426AAD88700185611 /* SceneDelegate.swift */,
-				A57516E626AAD88700185611 /* ViewController.swift */,
-				A57B883C26D822D600DE5411 /* BaseViewController.swift */,
-				A57B883926D81F4E00DE5411 /* ThemeManager.swift */,
-				A57516E826AAD88700185611 /* Main.storyboard */,
-				A57516EB26AAD88A00185611 /* Assets.xcassets */,
 				A57516ED26AAD88A00185611 /* LaunchScreen.storyboard */,
 				A57516F026AAD88A00185611 /* Info.plist */,
+				A57516EB26AAD88A00185611 /* Assets.xcassets */,
 			);
 			path = LightDarkMode;
 			sourceTree = "<group>";
@@ -124,6 +136,25 @@
 				A57B882B26D7C5F200DE5411 /* SourceSansPro-Italic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A592EDF326DABD0B006C3430 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				A592EDF026DABBA6006C3430 /* Theme.swift */,
+				A592EDF526DABD1D006C3430 /* LightTheme.swift */,
+				A592EDF826DABD2B006C3430 /* DarkTheme.swift */,
+				A592EDFB26DABD37006C3430 /* RedTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		A592EDFE26DABDF0006C3430 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A57B883926D81F4E00DE5411 /* ThemeManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,11 +239,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57B883D26D822D600DE5411 /* BaseViewController.swift in Sources */,
+				A592EDFC26DABD37006C3430 /* RedTheme.swift in Sources */,
 				A57516E726AAD88700185611 /* ViewController.swift in Sources */,
 				A57516E326AAD88700185611 /* AppDelegate.swift in Sources */,
 				A57516E526AAD88700185611 /* SceneDelegate.swift in Sources */,
+				A592EDF926DABD2B006C3430 /* DarkTheme.swift in Sources */,
+				A592EE0326DAD17C006C3430 /* BaseViewController.swift in Sources */,
+				A592EDEB26DAB1C0006C3430 /* ThemeSelectViewController.swift in Sources */,
 				A57B883A26D81F4E00DE5411 /* ThemeManager.swift in Sources */,
+				A592EDF626DABD1D006C3430 /* LightTheme.swift in Sources */,
+				A592EDF126DABBA6006C3430 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielyarmak.LightDarkMode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielyarmak.LightDarkMode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

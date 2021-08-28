@@ -2,17 +2,24 @@
 //  BaseViewController.swift
 //  LightDarkMode
 //
-//  Created by Daniel Yamrak on 26.08.2021.
+//  Created by Daniel Yamrak on 28.08.2021.
 //
 
 import UIKit
 
 class BaseViewController: UIViewController {
 
-    let themeManager = ThemeManager()
+    var themeManager = ThemeManager.shared
 
-    static func loadTheme() {
-        print("Load theme")
+    private(set) var backgroundColor: UIColor = .systemBackground
+    private(set) var textColor: UIColor = .label
+    private(set) var primaryColor: UIColor = .black
+
+    func setThemeColors() {
+        themeManager.loadThemeFromUserDefaults()
+        backgroundColor = themeManager.currentTheme.backgroundColor
+        textColor = themeManager.currentTheme.textColor
+        primaryColor = themeManager.currentTheme.primaryColor
     }
 
 }

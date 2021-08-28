@@ -22,12 +22,21 @@ class ViewController: BaseViewController {
     @IBOutlet weak var regularImage3: UIImageView!
     @IBOutlet weak var regularImage4: UIImageView!
 
+//    var themeManager = ThemeManager.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Make default Theme to be Light
         overrideUserInterfaceStyle = .light
 
         setupView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        loadTheme()
     }
 
     private func setupView() {
@@ -49,6 +58,17 @@ class ViewController: BaseViewController {
         regularLabel2.font = .regular
         regularLabel3.font = .regular
         regularLabel4.font = .regular
+    }
+
+    func loadTheme() {
+        setThemeColors()
+        view.backgroundColor = backgroundColor
+        headerLabel.textColor = textColor
+        titleLabel.textColor = textColor
+        regularLabel1.textColor = textColor
+        regularLabel2.textColor = textColor
+        regularLabel3.textColor = textColor
+        regularLabel4.textColor = textColor
     }
 
 }

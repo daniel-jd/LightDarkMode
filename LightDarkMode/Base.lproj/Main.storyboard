@@ -161,7 +161,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sYH-SF-W4O">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="zle-yh-roI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="zle-yh-roI">
+                            <connections>
+                                <segue destination="uo1-X7-0PZ" kind="show" id="fYB-hD-rZJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
@@ -181,6 +185,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797.10144927536237" y="62.946428571428569"/>
+        </scene>
+        <!--Theme Select View Controller-->
+        <scene sceneID="8c1-yk-WoK">
+            <objects>
+                <viewController storyboardIdentifier="ThemeSelectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uo1-X7-0PZ" customClass="ThemeSelectViewController" customModule="LightDarkMode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uiL-Jb-IJk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oUp-2k-d0j">
+                                <rect key="frame" x="67" y="350" width="280" height="196"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol0-z0-3wa">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="B2s-Os-drt"/>
+                                            <constraint firstAttribute="width" constant="280" id="lsN-V4-sLD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Light">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ligthThemeButtonPressed:" destination="uo1-X7-0PZ" eventType="touchUpInside" id="fSB-vl-HvC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLR-jy-g5F">
+                                        <rect key="frame" x="0.0" y="68" width="280" height="60"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Dark">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="darkThemeButtonPressed:" destination="uo1-X7-0PZ" eventType="touchUpInside" id="Esc-iS-b4p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDg-HG-nGs">
+                                        <rect key="frame" x="0.0" y="136" width="280" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Red">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redThemeButtonPressed:" destination="uo1-X7-0PZ" eventType="touchUpInside" id="BbR-vX-Gfu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JDg-HG-nGs" firstAttribute="height" secondItem="ol0-z0-3wa" secondAttribute="height" id="NnO-Tw-hhg"/>
+                                    <constraint firstItem="JDg-HG-nGs" firstAttribute="width" secondItem="ol0-z0-3wa" secondAttribute="width" id="RtU-Ig-hDd"/>
+                                    <constraint firstItem="ZLR-jy-g5F" firstAttribute="height" secondItem="ol0-z0-3wa" secondAttribute="height" id="c7j-OU-uRF"/>
+                                    <constraint firstItem="ZLR-jy-g5F" firstAttribute="width" secondItem="ol0-z0-3wa" secondAttribute="width" id="zoe-DA-Aus"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JL-8T-p8D">
+                                <rect key="frame" x="119.5" y="276.5" width="175" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XUD-Fn-fHd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8JL-8T-p8D" firstAttribute="centerX" secondItem="uiL-Jb-IJk" secondAttribute="centerX" id="JXy-0u-w7Y"/>
+                            <constraint firstItem="oUp-2k-d0j" firstAttribute="centerX" secondItem="uiL-Jb-IJk" secondAttribute="centerX" id="kt3-o5-oOs"/>
+                            <constraint firstItem="oUp-2k-d0j" firstAttribute="top" secondItem="8JL-8T-p8D" secondAttribute="bottom" constant="40" id="oyt-jA-hkB"/>
+                            <constraint firstItem="oUp-2k-d0j" firstAttribute="centerY" secondItem="uiL-Jb-IJk" secondAttribute="centerY" id="zBO-T6-Guy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8EX-rq-B4r"/>
+                    <connections>
+                        <outlet property="darkButton" destination="ZLR-jy-g5F" id="Z7r-cy-YL6"/>
+                        <outlet property="label" destination="8JL-8T-p8D" id="p0l-Zv-7h0"/>
+                        <outlet property="lightButton" destination="ol0-z0-3wa" id="eaQ-0Y-CbH"/>
+                        <outlet property="redButton" destination="JDg-HG-nGs" id="AkR-eh-a12"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpS-Oi-4pU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uce-rV-uPn">
@@ -210,6 +297,9 @@
         <image name="iphone-11-og-201909" width="600" height="315"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
