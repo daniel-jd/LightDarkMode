@@ -22,8 +22,7 @@ class ViewController: BaseViewController {
     @IBOutlet weak var regularImage3: UIImageView!
     @IBOutlet weak var regularImage4: UIImageView!
 
-//    var themeManager = ThemeManager.shared
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,13 +35,14 @@ class ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        loadTheme()
+        updateUI()
     }
 
     private func setupView() {
         makeRoundCornersWith(radius: 8)
         setCustomFonts()
     }
+    
     private func makeRoundCornersWith(radius: CGFloat) {
         bigImage.layer.cornerRadius = radius
         regularImage1.layer.cornerRadius = radius
@@ -60,9 +60,9 @@ class ViewController: BaseViewController {
         regularLabel4.font = .regular
     }
 
-    func loadTheme() {
-        setThemeColors()
-        view.backgroundColor = backgroundColor
+    override func updateUI() {
+        super.updateUI()
+        let textColor = themeManager.currentTheme.textColor
         headerLabel.textColor = textColor
         titleLabel.textColor = textColor
         regularLabel1.textColor = textColor

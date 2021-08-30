@@ -16,24 +16,17 @@ class ThemeSelectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         updateUI()
-    }
-
-    func updateUI() {
-        view.backgroundColor = backgroundColor
-        navigationController?.navigationBar.barTintColor = backgroundColor
-        label.textColor = textColor
     }
 
     private func setTheme(with themeType: ThemeManager.ThemeType) {
         themeManager.setCurrentTheme(with: themeType)
-        setThemeColors()
         updateUI()
+    }
+
+    override func updateUI() {
+        super.updateUI()
+        label.textColor = themeManager.currentTheme.textColor
     }
 
     @IBAction func ligthThemeButtonPressed(_ sender: Any) {
@@ -42,7 +35,6 @@ class ThemeSelectViewController: BaseViewController {
 
     @IBAction func darkThemeButtonPressed(_ sender: Any) {
         setTheme(with: .dark)
-
     }
     
     @IBAction func redThemeButtonPressed(_ sender: Any) {

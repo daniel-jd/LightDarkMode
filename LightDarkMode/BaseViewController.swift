@@ -9,17 +9,11 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    var themeManager = ThemeManager.shared
+    let themeManager = ThemeManager.shared
 
-    private(set) var backgroundColor: UIColor = .systemBackground
-    private(set) var textColor: UIColor = .label
-    private(set) var primaryColor: UIColor = .black
-
-    func setThemeColors() {
-        themeManager.loadThemeFromUserDefaults()
-        backgroundColor = themeManager.currentTheme.backgroundColor
-        textColor = themeManager.currentTheme.textColor
-        primaryColor = themeManager.currentTheme.primaryColor
+    func updateUI() {
+        view.backgroundColor = themeManager.currentTheme.backgroundColor
+        navigationController?.navigationBar.barTintColor = themeManager.currentTheme.backgroundColor
     }
 
 }
